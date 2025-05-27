@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Status de Suprimentos - Impressoras HP e Pantum</title>
+  <style>
+    :root {
+      --bg-color: #f0f2f5;
+      --text-color: #333;
+      --header-bg: #4A90E2;
+      --hp-bg: #d0e6ff;
+      --hp-hover: #b0d4fb;
+      --hp-text: #1a4e80;
+      --pantum-bg: #ffd6d6;
+      --pantum-hover: #f9bcbc;
+      --pantum-text: #8a1c1c;
+    }
+
+    body.dark {
+      --bg-color: #1f1f1f;
+      --text-color: #f0f0f0;
+      --header-bg: #333;
+      --hp-bg: #355f8c;
+      --hp-hover: #2e527a;
+      --hp-text: #ffffff;
+      --pantum-bg: #803030;
+      --pantum-hover: #992e2e;
+      --pantum-text: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: var(--header-bg);
+      color: #fff;
+      font-size: 22px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header p {
+      margin: 5px 0;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark .theme-toggle {
+      background-color: #444;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      transition: background-color 0.3s;
+    }
+
+    body.dark .container {
+      background-color: #2c2c2c;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .column {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .button-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .button-container button {
+      padding: 12px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+
+    .hp button {
+      background-color: var(--hp-bg);
+      color: var(--hp-text);
+    }
+
+    .hp button:hover {
+      background-color: var(--hp-hover);
+    }
+
+    .pantum button {
+      background-color: var(--pantum-bg);
+      color: var(--pantum-text);
+    }
+
+    .pantum button:hover {
+      background-color: var(--pantum-hover);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .column {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body class="dark">
+  <button class="theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
+
+  <div class="header">
+    <p>HOSPITAL PRESIDENTE VARGAS</p>
+    <p>DEPARTAMENTO DE INFORMÁTICA</p>
+	<p>SUPRIMENTOS DE IMPRESSÃO</p>
+  </div>
+
+  <div class="container">
+    <div class="column hp">
+      <h1>Impressoras HP</h1>
+      <div class="button-container">
+        <button onclick="window.open('http://172.17.27.101/hp/device/InternalPages/Index?id=SuppliesStatus', '_blank')">Impressora HP 101 - PORTARIA DO SAE</button>  
+        <button onclick="window.open('http://172.17.27.105/hp/device/InternalPages/Index?id=SuppliesStatus', '_blank')">Impressora HP 105 - SALA DE XEROX</button>
+        <button onclick="window.open('http://172.17.27.106/hp/device/InternalPages/Index?id=SuppliesStatus', '_blank')">Impressora HP 106 - AMBULATÓRIO TB</button>
+        <button onclick="window.open('http://172.17.27.107/hp/device/InternalPages/Index?id=SuppliesStatus', '_blank')">Impressora HP 107 - LABORATÓRIO</button>
+      </div>
+    </div>
+
+    <div class="column pantum">
+      <h1>Impressoras Pantum</h1>
+      <div class="button-container">
+        <button onclick="window.open('http://172.17.27.102/index.html', '_blank')">Impressora Pantum 102 - RECEPÇÃO SAE</button>
+        <button onclick="window.open('http://172.17.27.103/index.html', '_blank')">Impressora Pantum 103 - CPD</button>
+        <button onclick="window.open('http://172.17.27.104/index.html', '_blank')">Impressora Pantum 104 - ALMOXARIFADO</button>
+        <button onclick="window.open('http://172.17.27.108/index.html', '_blank')">Impressora Pantum 108 - RECURSOS HUMANOS</button>
+        <button onclick="window.open('http://172.17.27.109/index.html', '_blank')">Impressora Pantum 109 - SALA DE XEROX</button>
+        <button onclick="window.open('http://172.17.27.110/index.html', '_blank')">Impressora Pantum 110 - UTI</button>
+      </div>
+    </div>
+  </div>
+<center><footer>Desenvolvido por Jefferson Dantas - 2025</footer></center>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
