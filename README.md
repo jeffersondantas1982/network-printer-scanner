@@ -12,7 +12,7 @@ Detecção inteligente - Encontra níveis usando:
 
 Padrões com porcentagem (##%) + palavras-chave (toner, cartucho, nível)
 
-Estruturas HTML específicas (compatível com Pantum)
+Estruturas HTML específicas (compatível com HP e Pantum)
 
 Valores codificados em Base64 nas páginas
 
@@ -27,6 +27,7 @@ Classificação automática - Categoriza os níveis como:
 🛠️ Tecnologias Utilizadas
 python
 Python » requests, BeautifulSoup, re, base64, urllib3
+
 🚀 Casos de Uso
 Departamentos de TI gerenciando impressoras corporativas
 
